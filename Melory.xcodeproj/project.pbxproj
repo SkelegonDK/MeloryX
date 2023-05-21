@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8D1056D42A18201F00C05944 /* MeloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1056D32A18201F00C05944 /* MeloryApp.swift */; };
-		8D1056D62A18201F00C05944 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1056D52A18201F00C05944 /* ContentView.swift */; };
 		8D1056D82A18202000C05944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1056D72A18202000C05944 /* Assets.xcassets */; };
 		8D1056DC2A18202000C05944 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1056DB2A18202000C05944 /* Preview Assets.xcassets */; };
 		8D1056E62A18202000C05944 /* MeloryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1056E52A18202000C05944 /* MeloryTests.swift */; };
 		8D1056F02A18202000C05944 /* MeloryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1056EF2A18202000C05944 /* MeloryUITests.swift */; };
 		8D1056F22A18202000C05944 /* MeloryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1056F12A18202000C05944 /* MeloryUITestsLaunchTests.swift */; };
+		8D1CFE052A1A99B000C1BA02 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE042A1A99B000C1BA02 /* TitleView.swift */; };
+		8D1CFE072A1A9BD700C1BA02 /* Uncut-Sans-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D1CFE062A1A9B4200C1BA02 /* Uncut-Sans-Variable.ttf */; };
+		8D1CFE092A1A9E2100C1BA02 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE082A1A9E2100C1BA02 /* Extensions.swift */; };
+		8D1CFE0B2A1AA33100C1BA02 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		8D1056D02A18201F00C05944 /* Melory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1056D32A18201F00C05944 /* MeloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeloryApp.swift; sourceTree = "<group>"; };
-		8D1056D52A18201F00C05944 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D1056D72A18202000C05944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1056D92A18202000C05944 /* Melory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Melory.entitlements; sourceTree = "<group>"; };
 		8D1056DB2A18202000C05944 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +47,10 @@
 		8D1056EB2A18202000C05944 /* MeloryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeloryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1056EF2A18202000C05944 /* MeloryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeloryUITests.swift; sourceTree = "<group>"; };
 		8D1056F12A18202000C05944 /* MeloryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeloryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8D1CFE042A1A99B000C1BA02 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8D1CFE062A1A9B4200C1BA02 /* Uncut-Sans-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Uncut-Sans-Variable.ttf"; sourceTree = "<group>"; };
+		8D1CFE082A1A9E2100C1BA02 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		8D1056C72A18201F00C05944 = {
 			isa = PBXGroup;
 			children = (
+				8D1CFE062A1A9B4200C1BA02 /* Uncut-Sans-Variable.ttf */,
 				8D1056D22A18201F00C05944 /* Melory */,
 				8D1056E42A18202000C05944 /* MeloryTests */,
 				8D1056EE2A18202000C05944 /* MeloryUITests */,
@@ -96,10 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				8D1056D32A18201F00C05944 /* MeloryApp.swift */,
-				8D1056D52A18201F00C05944 /* ContentView.swift */,
 				8D1056D72A18202000C05944 /* Assets.xcassets */,
 				8D1056D92A18202000C05944 /* Melory.entitlements */,
 				8D1056DA2A18202000C05944 /* Preview Content */,
+				8D1CFE042A1A99B000C1BA02 /* TitleView.swift */,
+				8D1CFE082A1A9E2100C1BA02 /* Extensions.swift */,
+				8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */,
 			);
 			path = Melory;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			files = (
 				8D1056DC2A18202000C05944 /* Preview Assets.xcassets in Resources */,
 				8D1056D82A18202000C05944 /* Assets.xcassets in Resources */,
+				8D1CFE072A1A9BD700C1BA02 /* Uncut-Sans-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1056D62A18201F00C05944 /* ContentView.swift in Sources */,
 				8D1056D42A18201F00C05944 /* MeloryApp.swift in Sources */,
+				8D1CFE092A1A9E2100C1BA02 /* Extensions.swift in Sources */,
+				8D1CFE052A1A99B000C1BA02 /* TitleView.swift in Sources */,
+				8D1CFE0B2A1AA33100C1BA02 /* LevelSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,9 +424,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Melory/Melory.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Melory/Preview Content\"";
+				DEVELOPMENT_TEAM = TEM22B7DDE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -448,9 +462,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Melory/Melory.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Melory/Preview Content\"";
+				DEVELOPMENT_TEAM = TEM22B7DDE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
