@@ -10,40 +10,31 @@ struct LevelSelectView: View {
                 .font(.title)
                 .padding(.bottom, 20)
             
-            Button("EASY") {
-                selectedDifficulty = "EASY"
-                isGameViewActive = true
+            NavigationLink(destination: GameView(difficulty: "EASY", timeRemaining: 60.00, totalSquares: 18)) {
+                Text("EASY")
             }
+            .padding(.bottom, 10)
             .buttonStyle(LevelButtonStyle())
-            .tag("EASY")
             
-            Button("MID") {
-                selectedDifficulty = "MID"
-                isGameViewActive = true
+            NavigationLink(destination: GameView(difficulty: "MID", timeRemaining: 90.00, totalSquares: 30)) {
+                Text("MID")
             }
+            .padding(.bottom, 10)
             .buttonStyle(LevelButtonStyle())
-            .tag("MID")
             
-            Button("CHALLENGING") {
-                selectedDifficulty = "CHALLENGING"
-                isGameViewActive = true
+            NavigationLink(destination: GameView(difficulty: "CHALLENGING", timeRemaining: 120.00, totalSquares: 64)) {
+                Text("CHALLENGING")
             }
+            .padding(.bottom, 10)
             .buttonStyle(LevelButtonStyle())
-            .tag("CHALLENGING")
-            
-            Button("HARDCHORD") {
-                selectedDifficulty = "HARDCHORD"
-                isGameViewActive = true
+            NavigationLink(destination: GameView(difficulty: "HARDCHORD", timeRemaining: 150.00, totalSquares: 100)) {
+                Text("HARDCHORD")
             }
+            .disabled(!isHardChordEnabled)
             .buttonStyle(LevelButtonStyle())
-            .tag("HARDCHORD")
-            .disabled(isHardChordEnabled)
-            
-            NavigationLink(destination: GameView(difficulty: selectedDifficulty ?? "", timeRemaining: 0, gridCount: 0), isActive: $isGameViewActive) {
-                EmptyView()
-            }
         })
     }
+
     
     struct LevelButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
@@ -55,5 +46,11 @@ struct LevelSelectView: View {
                 .cornerRadius(10)
                 .multilineTextAlignment(.center)
         }
+    }
+}
+
+struct Previews_LevelSelectView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

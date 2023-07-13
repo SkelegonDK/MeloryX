@@ -17,6 +17,7 @@
 		8D1CFE072A1A9BD700C1BA02 /* Uncut-Sans-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D1CFE062A1A9B4200C1BA02 /* Uncut-Sans-Variable.ttf */; };
 		8D1CFE092A1A9E2100C1BA02 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE082A1A9E2100C1BA02 /* Extensions.swift */; };
 		8D1CFE0B2A1AA33100C1BA02 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */; };
+		8D39ED972A5ED77800291986 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D39ED962A5ED77800291986 /* DunneAudioKit */; };
 		8D493CCE2A5D58C90063F728 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D493CCD2A5D58C90063F728 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D39ED972A5ED77800291986 /* DunneAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +159,9 @@
 			dependencies = (
 			);
 			name = Melory;
+			packageProductDependencies = (
+				8D39ED962A5ED77800291986 /* DunneAudioKit */,
+			);
 			productName = Melory;
 			productReference = 8D1056D02A18201F00C05944 /* Melory.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 8D1056C72A18201F00C05944;
+			packageReferences = (
+				8D39ED952A5ED77800291986 /* XCRemoteSwiftPackageReference "DunneAudioKit" */,
+			);
 			productRefGroup = 8D1056D12A18201F00C05944 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -624,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D39ED952A5ED77800291986 /* XCRemoteSwiftPackageReference "DunneAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/DunneAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D39ED962A5ED77800291986 /* DunneAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D39ED952A5ED77800291986 /* XCRemoteSwiftPackageReference "DunneAudioKit" */;
+			productName = DunneAudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D1056C82A18201F00C05944 /* Project object */;
 }

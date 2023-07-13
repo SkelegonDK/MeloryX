@@ -12,11 +12,20 @@ struct GameView: View {
     let difficulty: String
     
     @State var timeRemaining: Double
-    @State var gridCount: Int
+    @State var totalSquares: Int
     @State var timerStarted = false
     
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
+    let difficultyLevels = [
+        "EASY": 3,
+        "MID": 4,
+        "CHALLENGING": 6,
+        "HARDCHORD": 8
+    ]
+    let notesPerRow = 4
+    let notes = ["C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4"]
+
     var body: some View {
         VStack {
             HStack {
@@ -29,18 +38,23 @@ struct GameView: View {
             }
             
             if timerStarted {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: gridCount), spacing: 10) {
-                    ForEach(0..<gridCount * gridCount) { index in
+                let columns = difficultyLevels[difficulty] ?? 3
+                
+                let rows = totalSquares / columns
+                
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10, alignment: .center), count: columns), spacing: 10) {
+                    ForEach(0..<totalSquares) { index in
                         Button(action: {
-                            // Handle button tap
-                            playSound()
+                            //btn action
                         }) {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color.blue)
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                                .aspectRatio(1, contentMode: .fit)
+                                
                         }
                     }
                 }
+                .frame(maxWidth: .infinity,maxHeight: UIScreen.main.bounds.height - (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0) - 100)
             }
         }
         .padding()
@@ -54,24 +68,20 @@ struct GameView: View {
             switch difficulty {
             case "EASY":
                 timeRemaining = 60
-                gridCount = 6
+                totalSquares = 18
             case "MID":
                 timeRemaining = 90
-                gridCount = 8
+                totalSquares = 32
             case "CHALLENGING":
                 timeRemaining = 120
-                gridCount = 10
+                totalSquares = 60
             case "HARDCHORD":
                 timeRemaining = 150
-                gridCount = 12
+                totalSquares = 104
             default:
                 timeRemaining = 60
-                gridCount = 6
+                totalSquares = 18
             }
         }
-    }
-    
-    func playSound() {
-        // Play sound
     }
 }
