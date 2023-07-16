@@ -1,0 +1,88 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "mido",
+        "description": "mido",
+        "isExtraImport": true,
+        "detail": "mido",
+        "documentation": {}
+    },
+    {
+        "label": "MidiFile",
+        "importPath": "mido",
+        "description": "mido",
+        "isExtraImport": true,
+        "detail": "mido",
+        "documentation": {}
+    },
+    {
+        "label": "MidiTrack",
+        "importPath": "mido",
+        "description": "mido",
+        "isExtraImport": true,
+        "detail": "mido",
+        "documentation": {}
+    },
+    {
+        "label": "AudioSegment",
+        "importPath": "pydub",
+        "description": "pydub",
+        "isExtraImport": true,
+        "detail": "pydub",
+        "documentation": {}
+    },
+    {
+        "label": "get_instrument_name",
+        "kind": 2,
+        "importPath": "tone_generator",
+        "description": "tone_generator",
+        "peekOfCode": "def get_instrument_name(program):\n    if 0 <= program < len(instrument_names):\n        return instrument_names[program]\n    else:\n        return \"Unknown\"\ndef get_note_name(pitch):\n    # Define a list of note names\n    note_names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']\n    # Calculate the octave number and note name\n    octave = (pitch // 12) - 1",
+        "detail": "tone_generator",
+        "documentation": {}
+    },
+    {
+        "label": "get_note_name",
+        "kind": 2,
+        "importPath": "tone_generator",
+        "description": "tone_generator",
+        "peekOfCode": "def get_note_name(pitch):\n    # Define a list of note names\n    note_names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']\n    # Calculate the octave number and note name\n    octave = (pitch // 12) - 1\n    note_name = note_names[pitch % 12]\n    # Return the note name and octave as a string\n    return f'{note_name}{octave}'\ndef generate_sounds(note_length, instrument_program):\n    # Define the directory to save the files",
+        "detail": "tone_generator",
+        "documentation": {}
+    },
+    {
+        "label": "generate_sounds",
+        "kind": 2,
+        "importPath": "tone_generator",
+        "description": "tone_generator",
+        "peekOfCode": "def generate_sounds(note_length, instrument_program):\n    # Define the directory to save the files\n    output_dir = 'Sound_generator/sounds'\n    os.makedirs(output_dir, exist_ok=True)\n    # Calculate the time for the note_off message in MIDI ticks\n    # (Assuming a tempo of 120 beats per minute and 960 ticks per beat)\n    note_off_time = int(note_length * 120 * 960)\n    # Create a new MIDI file\n    midi = MidiFile()\n    # Create a new track in the MIDI file",
+        "detail": "tone_generator",
+        "documentation": {}
+    },
+    {
+        "label": "instrument_names",
+        "kind": 5,
+        "importPath": "tone_generator",
+        "description": "tone_generator",
+        "peekOfCode": "instrument_names = [\n    \"Acoustic Grand Piano\", \"Bright Acoustic Piano\", \"Electric Grand Piano\", \"Honky-tonk Piano\",\n    \"Electric Piano 1\", \"Electric Piano 2\", \"Harpsichord\", \"Clavi\", \"Celesta\", \"Glockenspiel\",\n    \"Music Box\", \"Vibraphone\", \"Marimba\", \"Xylophone\", \"Tubular Bells\", \"Dulcimer\", \"Drawbar Organ\",\n    \"Percussive Organ\", \"Rock Organ\", \"Church Organ\", \"Reed Organ\", \"Accordion\", \"Harmonica\",\n    \"Tango Accordion\", \"Acoustic Guitar (nylon)\", \"Acoustic Guitar (steel)\", \"Electric Guitar (jazz)\",\n    \"Electric Guitar (clean)\", \"Electric Guitar (muted)\", \"Overdriven Guitar\", \"Distortion Guitar\",\n    \"Guitar Harmonics\", \"Acoustic Bass\", \"Electric Bass (finger)\", \"Electric Bass (pick)\", \"Fretless Bass\",\n    \"Slap Bass 1\", \"Slap Bass 2\", \"Synth Bass 1\", \"Synth Bass 2\", \"Violin\", \"Viola\", \"Cello\", \"Contrabass\",\n    \"Tremolo Strings\", \"Pizzicato Strings\", \"Orchestral Harp\", \"Timpani\", \"String Ensemble 1\",",
+        "detail": "tone_generator",
+        "documentation": {}
+    }
+]
