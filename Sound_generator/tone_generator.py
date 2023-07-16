@@ -45,7 +45,6 @@ def get_note_name(pitch):
     # Return the note name and octave as a string
     return f'{note_name}{octave}'
 
-
 def generate_sounds(note_length, instrument_program):
     # Define the directory to save the files
     output_dir = 'Sound_generator/sounds'
@@ -53,24 +52,24 @@ def generate_sounds(note_length, instrument_program):
 
     # Calculate the time for the note_off message in MIDI ticks
     # (Assuming a tempo of 120 beats per minute and 960 ticks per beat)
-    note_off_time = int(note_length * 120 * 960)
+    note_off_time = int(note_length * 120 * 960 / 60)  # Divide by 60 to convert from seconds to minutes
 
-    # Create a new MIDI file
-    midi = MidiFile()
+    # Add notes to the track for each note in 2 octaves (C3 to B4)
+    for pitch in range(48, 73):  # MIDI note numbers for C3 to B4 are 48 to 72
+        # Create a new MIDI file for each note
+        midi = MidiFile()
 
-    # Create a new track in the MIDI file
-    track = MidiTrack()
-    midi.tracks.append(track)
+        # Create a new track in the MIDI file
+        track = MidiTrack()
+        midi.tracks.append(track)
 
-    # Send a program change message to set the instrument
-    track.append(Message('program_change', program=instrument_program, time=0))
+        # Send a program change message to set the instrument
+        track.append(Message('program_change', program=instrument_program, time=0))
 
-    # Add notes to the track for each note in 3 octaves (C4 to B6)
-    for pitch in range(60, 85):
         # Note on
-        track.append(Message('note_on', note=pitch, velocity=64, time=0))
+        track.append(Message('note_on', note=pitch, velocity=100, time=0))  # Set velocity to 100
         # Note off after the specified note length
-        track.append(Message('note_off', note=pitch, velocity=64, time=note_off_time))
+        track.append(Message('note_off', note=pitch, velocity=100, time=note_off_time))
 
         # Save the MIDI file
         midi_filename = os.path.join(output_dir, f'note_{pitch}.mid')
@@ -78,7 +77,7 @@ def generate_sounds(note_length, instrument_program):
 
         # Use FluidSynth to convert the MIDI file to a WAV file
         wav_filename = os.path.join(output_dir, f'{get_instrument_name(instrument_program)}_{get_note_name(pitch)}.wav')
-        subprocess.run(['fluidsynth', '-ni', 'GeneralUser_GS.sf2', midi_filename, '-F', wav_filename, '-r', '44100'])
+        subprocess.run(['fluidsynth', '-ni', 'Sound_generator/The Fixed JummBox SoundFont11.sf2', midi_filename, '-F', wav_filename, '-r', '44100'])
 
         # Use pydub to convert the WAV file to an MP3 file
         os.makedirs(os.path.join(output_dir, get_instrument_name(instrument_program)), exist_ok=True)
@@ -89,5 +88,5 @@ def generate_sounds(note_length, instrument_program):
         os.remove(midi_filename)
         os.remove(wav_filename)
 
-# Call the function with a note length of 0.5 seconds and the MIDI program number for Acoustic Grand Piano
-generate_sounds(0.5, 0)
+# Call the function with a note length of 0.3 seconds and the MIDI program number for Acoustic Grand Piano
+generate_sounds(0.3, 38)
