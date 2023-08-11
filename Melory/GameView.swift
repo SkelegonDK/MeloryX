@@ -24,37 +24,33 @@ struct GameView: View {
         "HARDCHORD": 8
     ]
     let notesPerRow = 4
-    let toneURLs = [
-        "C3" = URL(fileURLWithPath: Bundle.main.path(forResource: "samples/C3", ofType: "wav")!),
-        "C#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "C#3", ofType: "wav")!),
-        "D3" = URL(fileURLWithPath: Bundle.main.path(forResource: "D3", ofType: "wav")!),
-        "D#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "D#3", ofType: "wav")!),
-        "E3" = URL(fileURLWithPath: Bundle.main.path(forResource: "E3", ofType: "wav")!),
-        "F3" = URL(fileURLWithPath: Bundle.main.path(forResource: "F3", ofType: "wav")!),
-        "F#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "F#3", ofType: "wav")!),
-        "G3" = URL(fileURLWithPath: Bundle.main.path(forResource: "G3", ofType: "wav")!),
-        "G#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "G#3", ofType: "wav")!),
-        "A3" = URL(fileURLWithPath: Bundle.main.path(forResource: "A3", ofType: "wav")!),
-        "A4" = URL(fileURLWithPath: Bundle.main.path(forResource: "A4", ofType: "wav")!),
-        "A5" = URL(fileURLWithPath: Bundle.main.path(forResource: "A5", ofType: "wav")!),
-        "A#4" = URL(fileURLWithPath: Bundle.main.path(forResource: "A#4", ofType: "wav")!),
-        "B4" = URL(fileURLWithPath: Bundle.main.path(forResource: "B4", ofType: "wav")!),
-        "B5" = URL(fileURLWithPath: Bundle.main.path(forResource: "B5", ofType: "wav")!),
-        "C4" = URL(fileURLWithPath: Bundle.main.path(forResource: "C4", ofType: "wav")!),
-        "D4" = URL(fileURLWithPath: Bundle.main.path(forResource: "D4", ofType: "wav")!),
-        "D5" = URL(fileURLWithPath: Bundle.main.path(forResource: "D5", ofType: "wav")!),
-        "D#4" = URL(fileURLWithPath: Bundle.main.path(forResource: "D#4", ofType: "wav")!),
-        "E4" = URL(fileURLWithPath: Bundle.main.path(forResource: "E4", ofType: "wav")!),
-        "E5" = URL(fileURLWithPath: Bundle.main.path(forResource: "E5", ofType: "wav")!),
-        "F4" = URL(fileURLWithPath: Bundle.main.path(forResource: "F4", ofType: "wav")!),
-        "F5" = URL(fileURLWithPath: Bundle.main.path(forResource: "F5", ofType: "wav")!),
-        "F#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "F#3", ofType: "wav")!),
-        "G3" = URL(fileURLWithPath: Bundle.main.path(forResource: "G3", ofType: "wav")!),
-        "G4" = URL(fileURLWithPath: Bundle.main.path(forResource: "G4", ofType: "wav")!),
-        "G5" = URL(fileURLWithPath: Bundle.main.path(forResource: "G5", ofType: "wav")!),
-        "G#3" = URL(fileURLWithPath: Bundle.main.path(forResource: "G#3", ofType: "wav")!),
-
-    ]
+    let toneURLs: [String: URL] = [
+    "A#3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_A#3", ofType: "mp3")!),
+    "A#4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_A#4", ofType: "mp3")!),
+    "A3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_A3", ofType: "mp3")!),
+    "A4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_A4", ofType: "mp3")!),
+    "B3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_B3", ofType: "mp3")!),
+    "B4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_B4", ofType: "mp3")!),
+    "C#3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_C#3", ofType: "mp3")!),
+    "C#4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_C#4", ofType: "mp3")!),
+    "C3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_C3", ofType: "mp3")!),
+    "C4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_C4", ofType: "mp3")!),
+    "C5": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_C5", ofType: "mp3")!),
+    "D#3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_D#3", ofType: "mp3")!),
+    "D#4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_D#4", ofType: "mp3")!),
+    "D3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_D3", ofType: "mp3")!),
+    "D4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_D4", ofType: "mp3")!),
+    "E3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_E3", ofType: "mp3")!),
+    "E4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_E4", ofType: "mp3")!),
+    "F#3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_F#3", ofType: "mp3")!),
+    "F#4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_F#4", ofType: "mp3")!),
+    "F3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_F3", ofType: "mp3")!),
+    "F4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_F4", ofType: "mp3")!),
+    "G#3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_G#3", ofType: "mp3")!),
+    "G#4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_G#4", ofType: "mp3")!),
+    "G3": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_G3", ofType: "mp3")!),
+    "G4": URL(fileURLWithPath: Bundle.main.path(forResource: "Sound_generator/sounds/Synth Bass 1/note_G4", ofType: "mp3")!),
+]
 
     let numCards = totalSquares / 2
     var toneIndices = Array(0..<numCards)
@@ -62,6 +58,7 @@ struct GameView: View {
     toneIndices.shuffle()
 
     var body: some View {
+        let totalSquares = notesPerRow * numCards 
         VStack {
             HStack {
                 Text(String(format: "%.2f", timeRemaining))
