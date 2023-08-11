@@ -19,7 +19,7 @@
 		8D1CFE0B2A1AA33100C1BA02 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */; };
 		8D39ED972A5ED77800291986 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D39ED962A5ED77800291986 /* DunneAudioKit */; };
 		8D493CCE2A5D58C90063F728 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D493CCD2A5D58C90063F728 /* GameView.swift */; };
-		8D72E6152A632AD8007FA3C0 /* samples in Resources */ = {isa = PBXBuildFile; fileRef = 8D72E6142A632AD8007FA3C0 /* samples */; };
+		8DE0FB152A640C5700920CC7 /* Synth Bass 1 in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0FB142A640C5700920CC7 /* Synth Bass 1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		8D1CFE082A1A9E2100C1BA02 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D1CFE0A2A1AA33100C1BA02 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 		8D493CCD2A5D58C90063F728 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		8D72E6142A632AD8007FA3C0 /* samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = samples; sourceTree = "<group>"; };
+		8DE0FB142A640C5700920CC7 /* Synth Bass 1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Synth Bass 1"; path = "Sound_generator/sounds/Synth Bass 1"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		8D1056D22A18201F00C05944 /* Melory */ = {
 			isa = PBXGroup;
 			children = (
-				8D72E6142A632AD8007FA3C0 /* samples */,
+				8DE0FB142A640C5700920CC7 /* Synth Bass 1 */,
 				8D1056D32A18201F00C05944 /* MeloryApp.swift */,
 				8D1056D72A18202000C05944 /* Assets.xcassets */,
 				8D1056D92A18202000C05944 /* Melory.entitlements */,
@@ -256,8 +256,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D72E6152A632AD8007FA3C0 /* samples in Resources */,
 				8D1056DC2A18202000C05944 /* Preview Assets.xcassets in Resources */,
+				8DE0FB152A640C5700920CC7 /* Synth Bass 1 in Resources */,
 				8D1056D82A18202000C05944 /* Assets.xcassets in Resources */,
 				8D1CFE072A1A9BD700C1BA02 /* Uncut-Sans-Variable.ttf in Resources */,
 			);
