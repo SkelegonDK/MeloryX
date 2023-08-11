@@ -54,6 +54,7 @@ def generate_sounds(note_length, instrument_program):
     # (Assuming a tempo of 120 beats per minute and 960 ticks per beat)
     note_off_time = int(note_length * 120 * 960 / 60)  # Divide by 60 to convert from seconds to minutes
 
+
     # Add notes to the track for each note in 2 octaves (C3 to B4)
     for pitch in range(48, 73):  # MIDI note numbers for C3 to B4 are 48 to 72
         # Create a new MIDI file for each note
@@ -89,4 +90,4 @@ def generate_sounds(note_length, instrument_program):
         os.remove(wav_filename)
 
 # Call the function with a note length of 0.3 seconds and the MIDI program number for Acoustic Grand Piano
-generate_sounds(0.3, 38)
+generate_sounds(0.1, 38)
